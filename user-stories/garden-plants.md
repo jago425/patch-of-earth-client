@@ -1,0 +1,3 @@
+#### As a user...
+1. I need to be able add a plant to a garden.
+2. I need to be able to remove a plant from a garden.

@@ -22,3 +22,8 @@
 ## Development Strategy
 
 ## User Stories
+
+1. [Authentication](./user-stories/auth.md)
+2. [Gardens](./user-stories/gardens.md)
+3. [Plants](./user-stories/plants.md)
+4. [Gardens/Plants](./user-stories/garden-plants.md)
