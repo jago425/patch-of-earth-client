@@ -85,15 +85,22 @@
        <label>Variety:</label><input class="plant-input" type="text" name="plant[variety]" required size= "75" placeholder="Variety (optional)"><br>
        <label>Brand:</label><input class="plant-input" type="text" name="plant[Brand]" required size= "75" placeholder="Brand (optional)"><br>
        <br>
-<div class="modal-footer">
+        <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
           <input type="submit" value="Save Changes" id="add-plant-modal-save" class="btn primary-button">
-          </div>
+        </div>
         </form>
       </div>
     </div>
   </div>
 </div>
+<div id="index-plants">
+ <button class="btn primary-button index-plants" id='see-plants'>See All Plants</button>
+</div>
+<!-- PLANTS TABLE-->
+    <section class='plant-table'>
+      <div id='plant-table-data' class='plant-table'></div>
+    </section>
 <!-- CHANGE PASSWORD MODAL-->
   <div id="change-password-modal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

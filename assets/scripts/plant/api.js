@@ -3,7 +3,6 @@ const config = require('../config')
 const store = require('../store')
 
 const createNewPlant = function (data) {
-  console.log('data is', data)
   return $.ajax({
     url: config.apiOrigin + '/plants',
     method: 'POST',
@@ -14,15 +13,15 @@ const createNewPlant = function (data) {
   })
 }
 
-// const getPlants = function () {
-//   return $.ajax({
-//     url: config.apiOrigin + '/plants',
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const getPlants = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/plants',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 //
 // const showPlant = function (plantId) {
 //   return $.ajax({
@@ -58,8 +57,8 @@ const createNewPlant = function (data) {
 // }
 
 module.exports = {
-  createNewPlant
-  // getPlants,
+  createNewPlant,
+  getPlants
   // showPlant,
   // updatePlant,
   // deletePlant

@@ -1,5 +1,5 @@
-// const api = require('./api')
-// const authUi = require('../authentication/ui')
+
+const indexPlantsTemplate = require('../templates/helpers/plant-table.handlebars')
 
 const createPlantSuccess = function () {
   console.log('create plant worked')
@@ -17,7 +17,18 @@ const createPlantFailure = function () {
   $('#status-message').text("something's not right")
 }
 
+const getAllPlantsSuccess = function (data) {
+  $('#plant-table-data').empty()
+  const indexPlants = indexPlantsTemplate({ plants: data.plants })
+  $('#plant-table-data').html(indexPlants)
+}
+
+const getAllPlantsFailure = function () {
+  $('#status-message').text('failed to load your plants')
+}
 module.exports = {
   createPlantSuccess,
-  createPlantFailure
+  createPlantFailure,
+  getAllPlantsSuccess,
+  getAllPlantsFailure
 }
