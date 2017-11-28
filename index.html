@@ -65,7 +65,7 @@
         <h5 class="modal-title" id="addPlantLabel">Add Plant</h5>
       </div>
       <div class="modal-body">
-        <form id="add-plant-modal">
+        <form id="add-plant-modal" class="add-plant">
           <div class="modal-message"></div>
           <label>Plant Type</label>
           <select class="plant-input" id="modal-plant-type" name="plant[plant_type]" val='select a type'>
@@ -80,10 +80,10 @@
             <option value="Other">Other</option>
           </select>
         <br>
-       <label>Common Name:</label><input class="plant-input" type="text" name="plant[common_name]" required size= "75" placeholder="Common Name"><br>
-       <label>Scientific Name:</label><input class="plant-input" type="text" name="plant[scientific_name]" required size= "75" placeholder="Scientific Name"><br>
-       <label>Variety:</label><input class="plant-input" type="text" name="plant[variety]" required size= "75" placeholder="Variety"><br>
-       <label>Brand:</label><input class="plant-input" type="text" name="plant[Brand]" required size= "75" placeholder="Brand"><br>
+       <label>Common Name:</label><input class="plant-input" type="text" name="plant[common_name]" required size= "75" placeholder="Common Name (required)"><br>
+       <label>Scientific Name:</label><input class="plant-input" type="text" name="plant[scientific_name]" required size= "75" placeholder="Scientific Name (optional)"><br>
+       <label>Variety:</label><input class="plant-input" type="text" name="plant[variety]" required size= "75" placeholder="Variety (optional)"><br>
+       <label>Brand:</label><input class="plant-input" type="text" name="plant[Brand]" required size= "75" placeholder="Brand (optional)"><br>
        <br>
 <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
