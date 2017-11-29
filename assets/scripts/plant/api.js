@@ -34,7 +34,6 @@ const showPlant = function (plantId) {
 }
 
 const updatePlant = function (plantId, data) {
-  console.log('data is', data)
   return $.ajax({
     url: config.apiOrigin + '/plants/' + plantId,
     method: 'PATCH',

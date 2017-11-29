@@ -7,15 +7,12 @@ const createPlantSuccess = function () {
   $('#addPlantModal').modal('toggle')
   $('#status-message').text('Your plant has been added!')
   $('.plant-input').val('')
-  // $('#list-form').get(0).reset()
-  // api.getList()
-  //   .then(authUi.onGetListSuccess)
-  //   .catch(authUi.onGetListFailure)
-  // $('#status-message').text('')
+  clearStatus()
 }
 
 const createPlantFailure = function () {
   $('#status-message').text("something's not right")
+  clearStatus()
 }
 
 const getAllPlantsSuccess = function (data) {
@@ -26,18 +23,17 @@ const getAllPlantsSuccess = function (data) {
 
 const getAllPlantsFailure = function () {
   $('#status-message').text('failed to load your plants')
+  clearStatus()
 }
 
 const showPlantSuccess = function (data) {
   const showPlant = showEditPlantsTemplate(data)
   $('.edit-plant').html(showPlant)
-  // $('#modal-item-description').val(data.list_item.item_description)
-  // $('#item-id-from-edit-modal').attr('value', data.list_item.id)
-  // $('#edit-modal').off('submit')
 }
 
 const showPlantFailure = function () {
   $('#status-message').text("something's not right")
+  clearStatus()
 }
 const updatePlantSuccess = function () {
   $('#editPlantModal').modal('toggle')
@@ -45,10 +41,12 @@ const updatePlantSuccess = function () {
   api.getPlants()
     .then(getAllPlantsSuccess)
     .catch(getAllPlantsFailure)
+  clearStatus()
 }
 
 const updatePlantFailure = function () {
   $('#status-message').text("something's not right")
+  clearStatus()
 }
 
 const deletePlantSuccess = function () {
@@ -56,10 +54,18 @@ const deletePlantSuccess = function () {
   api.getPlants()
     .then(getAllPlantsSuccess)
     .catch(getAllPlantsFailure)
+  clearStatus()
 }
 
 const deletePlantFailure = function () {
   $('#status-message').text("something's not right")
+  clearStatus()
+}
+
+const clearStatus = function () {
+  setTimeout(function () {
+    $('#status-message').text('')
+  }, 2500)
 }
 
 module.exports = {

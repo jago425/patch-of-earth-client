@@ -9,7 +9,10 @@ const signUpSuccess = function (data) {
 }
 
 const signUpFailure = function () {
+  // console.log('sign-up called .catch on %o with arguments: %o', this, arguments)
   $('#status-message').text('Sign-Up Failed!')
+  $('.nppi').val('')
+  clearStatus()
 }
 
 const signInSuccess = function (response, event) {
@@ -20,17 +23,22 @@ const signInSuccess = function (response, event) {
   $('#change-password').show()
   $('.nppi').val('')
   $('#status-message').text('')
+  $('[data-user]').removeClass('hidden')
+  $('#see-plants').show()
+  $('.add-plant-button').show()
 }
 
 const signInFailure = function () {
   $('#status-message').text('Login Failed')
   $('.nppi').val('')
+  clearStatus()
 }
 
 const changePasswordSuccess = function () {
   $('#status-message').text('Changed password successfully')
   $('.nppi').val('')
   $('#change-password-modal').modal('hide')
+  clearStatus()
 }
 
 const changePasswordFailure = function () {
@@ -44,13 +52,22 @@ const signOutSuccess = function () {
   $('#sign-out').hide()
   $('#sign-in').show()
   $('#sign-up').show()
-  // $('#list-form').hide()
-  // $('[data-user]').addClass('hidden')
-  // $('#bucket-list-handlebars').empty()
+  $('[data-user]').addClass('hidden')
+  $('#see-plants').hide()
+  $('.add-plant-button').hide()
+  $('.table').hide()
+  clearStatus()
 }
 
 const signOutFailure = function () {
   $('#status-message').text('Logout Failed')
+  clearStatus()
+}
+
+const clearStatus = function () {
+  setTimeout(function () {
+    $('#status-message').text('')
+  }, 3000)
 }
 
 module.exports = {
