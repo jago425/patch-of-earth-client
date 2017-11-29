@@ -21,6 +21,7 @@ const onLaunchEditModal = function (event) {
   event.preventDefault()
   $('.modal-message').text('')
   api.showPlant(event.target.dataset.id)
+    .then(console.log(event.target.dataset.id))
     .then(ui.showPlantSuccess)
     .catch(ui.showPlantFailure)
 }

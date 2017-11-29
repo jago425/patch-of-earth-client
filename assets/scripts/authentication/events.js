@@ -5,7 +5,8 @@ const ui = require('./ui')
 const onPageLoad = function () {
   $('#sign-out').hide()
   $('#change-password').hide()
-  $('#list-form').hide()
+  $('#see-plants').hide()
+  $('.add-plant-button').hide()
 }
 
 const onSignUp = function (event) {

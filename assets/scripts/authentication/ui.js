@@ -13,8 +13,6 @@ const signUpFailure = function () {
 }
 
 const signInSuccess = function (response, event) {
-  // $('#status-message').text('Signed in successfully')
-  // $('#list-form').show()
   store.user = response.user
   $('#sign-in').hide()
   $('#sign-up').hide()
@@ -22,23 +20,7 @@ const signInSuccess = function (response, event) {
   $('#change-password').show()
   $('.nppi').val('')
   $('#status-message').text('')
-  // $('#list-form').show()
-  $('[data-user]').removeClass('hidden')
-  // api.getList()
-  //   .then(onGetListSuccess)
-  //   .catch(onGetListFailure)
 }
-// function to display my index request
-// const onGetListSuccess = function (data) {
-//   $('#bucket-list-handlebars').empty()
-//   const showListItemsHTML = handlebars({list_items: data.list_items})
-//   $('#bucket-list-handlebars').html(showListItemsHTML)
-//   $('#status-message').text('')
-// }
-
-// const onGetListFailure = function () {
-//   $('#status-message').text('failed to load your list')
-// }
 
 const signInFailure = function () {
   $('#status-message').text('Login Failed')
