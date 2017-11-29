@@ -1,4 +1,4 @@
-<table>
+<table class="table table-responsive">
   <thead class='table-header'>
       <th class='show-mobile'>Plant Type</th>
       <th class='show-mobile'>Common Name</th>
@@ -14,14 +14,12 @@
       <td class='hide-mobile'>{{plant.scientific_name}}</td>
       <td class='show-mobile'>{{plant.variety}}</td>
       <td class='hide-mobile'>{{plant.brand}}</td>
-    </tr>
-    <tr>
       <td class='button-cell'>
         <button data-id="{{plant.id}}" type="button" class="edit-button" data-toggle="modal" data-target="#editPlantModal">Edit</button>
-      </td>
-      <td class='button-cell'>
-        <button data-id="{{plant.id}}"  type="button" class="table-button delete-plant" data-toggle="modal" data-target="#delete-modal">Delete</button>
-      </td>
+        </td>
+        <td class='button-cell'>
+          <button data-id="{{plant.id}}"  type="button" class="table-button delete-plant" data-toggle="modal" data-target="#delete-modal">Delete</button>
+        </td>
     </tr>
         {{/each}}
   </table>
