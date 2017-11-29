@@ -33,18 +33,18 @@ const showPlant = function (plantId) {
   })
 }
 
-// const updatePlant = function (plantId, data) {
-//   // console.log('ajax', listId, data)
-//   return $.ajax({
-//     url: config.apiOrigin + '/plants/' + plantId,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     },
-//     data: data
-//   })
-// }
-//
+const updatePlant = function (plantId, data) {
+  console.log('data is', data)
+  return $.ajax({
+    url: config.apiOrigin + '/plants/' + plantId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data: data
+  })
+}
+
 // const deletePlant = function (plantId) {
 //   // console.log(listId)
 //   return $.ajax({
@@ -59,7 +59,7 @@ const showPlant = function (plantId) {
 module.exports = {
   createNewPlant,
   getPlants,
-  showPlant
-  // updatePlant,
+  showPlant,
+  updatePlant
   // deletePlant
 }

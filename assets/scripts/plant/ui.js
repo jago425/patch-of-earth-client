@@ -1,6 +1,7 @@
 
 const indexPlantsTemplate = require('../templates/helpers/plant-table.handlebars')
 const showEditPlantsTemplate = require('../templates/helpers/edit-plant.handlebars')
+const api = require('./api')
 
 const createPlantSuccess = function () {
   $('#addPlantModal').modal('toggle')
@@ -28,23 +29,35 @@ const getAllPlantsFailure = function () {
 }
 
 const showPlantSuccess = function (data) {
-  console.log('data is', data)
   const showPlant = showEditPlantsTemplate(data)
   $('.edit-plant').html(showPlant)
-  console.log(data.plant)
   // $('#modal-item-description').val(data.list_item.item_description)
   // $('#item-id-from-edit-modal').attr('value', data.list_item.id)
   // $('#edit-modal').off('submit')
 }
 
 const showPlantFailure = function () {
+  $('#status-message').text("something's not right")
+}
+const updatePlantSuccess = function () {
+  $('#editPlantModal').modal('toggle')
+  $('#status-message').text('Your plant has been updated!')
+  api.getPlants()
+    .then(getAllPlantsSuccess)
+    .catch(getAllPlantsFailure)
+}
+
+const updatePlantFailure = function () {
 
 }
+
 module.exports = {
   createPlantSuccess,
   createPlantFailure,
   getAllPlantsSuccess,
   getAllPlantsFailure,
   showPlantSuccess,
-  showPlantFailure
+  showPlantFailure,
+  updatePlantSuccess,
+  updatePlantFailure
 }
