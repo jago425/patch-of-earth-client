@@ -36,13 +36,21 @@ const onSubmitUpdatePlant = function (event) {
     .catch(ui.updatePlantFailure)
 }
 
+// function to attach a click handler to the delete button
+const onDeletePlant = function (event) {
+  event.preventDefault()
+  const deleteTarget = event.target.dataset.id
+  api.deletePlant(deleteTarget)
+    .then(ui.deletePlantSuccess)
+    .catch(ui.deletePlantFailure)
+}
+
 const plantHandlers = function () {
   $(document).on('submit', '.add-plant', newPlant)
   $(document).on('click', '.index-plants', getAllPlants)
   $(document).on('click', '.edit-button', onLaunchEditModal)
   $(document).on('submit', '.editplant', onSubmitUpdatePlant)
-  // click handler to wait for delete button to exist, then click handler is added to it
-  // $(document).on('click', '.delete-item', bucketListUi.onDeleteClickButton)
+  $(document).on('click', '.delete-plant', onDeletePlant)
 }
 
 module.exports = {
@@ -50,5 +58,6 @@ module.exports = {
   getAllPlants,
   onLaunchEditModal,
   onSubmitUpdatePlant,
+  onDeletePlant,
   plantHandlers
 }

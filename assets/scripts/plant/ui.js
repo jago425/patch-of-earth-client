@@ -48,7 +48,18 @@ const updatePlantSuccess = function () {
 }
 
 const updatePlantFailure = function () {
+  $('#status-message').text("something's not right")
+}
 
+const deletePlantSuccess = function () {
+  $('#status-message').text('Your plant has been deleted!')
+  api.getPlants()
+    .then(getAllPlantsSuccess)
+    .catch(getAllPlantsFailure)
+}
+
+const deletePlantFailure = function () {
+  $('#status-message').text("something's not right")
 }
 
 module.exports = {
@@ -59,5 +70,7 @@ module.exports = {
   showPlantSuccess,
   showPlantFailure,
   updatePlantSuccess,
-  updatePlantFailure
+  updatePlantFailure,
+  deletePlantSuccess,
+  deletePlantFailure
 }

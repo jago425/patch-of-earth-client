@@ -45,21 +45,20 @@ const updatePlant = function (plantId, data) {
   })
 }
 
-// const deletePlant = function (plantId) {
-//   // console.log(listId)
-//   return $.ajax({
-//     url: config.apiOrigin + '/plants/' + plantId,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
+const deletePlant = function (plantId) {
+  return $.ajax({
+    url: config.apiOrigin + '/plants/' + plantId,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
 module.exports = {
   createNewPlant,
   getPlants,
   showPlant,
-  updatePlant
-  // deletePlant
+  updatePlant,
+  deletePlant
 }
