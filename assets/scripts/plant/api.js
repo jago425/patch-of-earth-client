@@ -22,17 +22,17 @@ const getPlants = function () {
     }
   })
 }
-//
-// const showPlant = function (plantId) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/plants/' + plantId,
-//     method: 'GET',
-//     headers: {
-//       Authorization: 'Token token=' + store.user.token
-//     }
-//   })
-// }
-//
+
+const showPlant = function (plantId) {
+  return $.ajax({
+    url: config.apiOrigin + '/plants/' + plantId,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 // const updatePlant = function (plantId, data) {
 //   // console.log('ajax', listId, data)
 //   return $.ajax({
@@ -58,8 +58,8 @@ const getPlants = function () {
 
 module.exports = {
   createNewPlant,
-  getPlants
-  // showPlant,
+  getPlants,
+  showPlant
   // updatePlant,
   // deletePlant
 }

@@ -68,7 +68,7 @@
         <form id="add-plant-modal" class="add-plant">
           <div class="modal-message"></div>
           <label>Plant Type</label>
-          <select class="plant-input" id="modal-plant-type" name="plant[plant_type]" val='select a type'>
+          <select required class="plant-input" id="modal-plant-type" name="plant[plant_type]" val='select a type'>
             <option value="" disabled selected style="display: none;">Please Choose</option>
             <option value="Flower">Flower</option>
             <option value="Shrub">Shrub</option>
@@ -80,10 +80,10 @@
             <option value="Other">Other</option>
           </select>
         <br>
-       <label>Common Name:</label><input class="plant-input" type="text" name="plant[common_name]" required size= "75" placeholder="Common Name (required)"><br>
-       <label>Scientific Name:</label><input class="plant-input" type="text" name="plant[scientific_name]" required size= "75" placeholder="Scientific Name (optional)"><br>
-       <label>Variety:</label><input class="plant-input" type="text" name="plant[variety]" required size= "75" placeholder="Variety (optional)"><br>
-       <label>Brand:</label><input class="plant-input" type="text" name="plant[Brand]" required size= "75" placeholder="Brand (optional)"><br>
+       <label>Common Name:</label><input required class="plant-input" type="text" name="plant[common_name]" required size= "75" placeholder="Common Name (required)"><br>
+       <label>Scientific Name:</label><input class="plant-input" type="text" name="plant[scientific_name]" size= "75" placeholder="Scientific Name (optional)"><br>
+       <label>Variety:</label><input class="plant-input" type="text" name="plant[variety]" size= "75" placeholder="Variety (optional)"><br>
+       <label>Brand:</label><input class="plant-input" type="text" name="plant[Brand]" size= "75" placeholder="Brand (optional)"><br>
        <br>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -101,24 +101,43 @@
     <section class='plant-table'>
       <div id='plant-table-data' class='plant-table'></div>
     </section>
-<!-- CHANGE PASSWORD MODAL-->
-  <div id="change-password-modal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
-        </div>
-        <div class="modal-body">
-          <form id='change-password'>
-            <div class="chg-pw-modal-message"></div>
-            <input required type="password" id="change-password-old" name="passwords[old]" class="nppi text-box" placeholder="Old Password">
-            <input required type="password" id="change-password-new" name="passwords[new]" class="nppi text-box" placeholder="New Password">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <input type="submit" name="submit" class="btn primary-button" value="Change Password">
-          </form>
+    <!-- EDIT MODAL-->
+    <div>
+    <div class="modal fade" id="editPlantModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editPlantLabel">Edit Plant</h5>
+          </div>
+          <div class="modal-body">
+              <div class="modal-message edit-plant"></div>
+              <!-- <div class="modal-footer"> -->
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button> -->
+            <!-- </div> -->
+          </div>
         </div>
       </div>
     </div>
   </div>
+<!-- CHANGE PASSWORD MODAL-->
+      <div id="change-password-modal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+            </div>
+            <div class="modal-body">
+              <form id='change-password'>
+                <div class="chg-pw-modal-message"></div>
+                <input required type="password" id="change-password-old" name="passwords[old]" class="nppi text-box" placeholder="Old Password">
+                <input required type="password" id="change-password-new" name="passwords[new]" class="nppi text-box" placeholder="New Password">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <input type="submit" name="submit" class="btn primary-button" value="Change Password">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </body>
 </html>

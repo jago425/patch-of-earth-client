@@ -17,22 +17,17 @@ const getAllPlants = function (data) {
     .catch(ui.getAllPlantsFailure)
 }
 
-// function to display my index request
-// const onGetListSuccess = function (data) {
-//   $('#bucket-list-handlebars').empty()
-//   const showListItemsHTML = handlebars({list_items: data.list_items})
-//   $('#bucket-list-handlebars').html(showListItemsHTML)
-//   $('#status-message').text('')
-// }
-//
-// const onGetListFailure = function () {
-//   $('#status-message').text('failed to load your list')
-// }
-
+const onLaunchEditModal = function (event) {
+  event.preventDefault()
+  $('.modal-message').text('')
+  api.showPlant(event.target.dataset.id)
+    .then(ui.showPlantSuccess)
+    .catch(ui.showPlantFailure)
+}
 const plantHandlers = function () {
   $(document).on('submit', '.add-plant', newPlant)
   $(document).on('click', '.index-plants', getAllPlants)
-  // $('.add-plant').on('submit', newPlant)
+  $(document).on('click', '.edit-button', onLaunchEditModal)
   // click handler to wait for edit button to exist then click handler is added to it
   // $(document).on('click', '.edit-button', bucketListUi.onLaunchEditModal)
   // click handle to wait until the save changes  button on the edit modal exists
@@ -43,7 +38,7 @@ const plantHandlers = function () {
 
 module.exports = {
   newPlant,
-  // seeAllPlants,
   getAllPlants,
+  onLaunchEditModal,
   plantHandlers
 }
