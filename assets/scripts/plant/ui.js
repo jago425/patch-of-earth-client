@@ -56,6 +56,7 @@ const updatePlantFailure = function () {
 
 const deletePlantSuccess = function () {
   $('#status-message').text('Your plant has been deleted!')
+  $('#delete-plant-modal').modal('toggle')
   api.getPlants()
     .then(getAllPlantsSuccess)
     .catch(getAllPlantsFailure)

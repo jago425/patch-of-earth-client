@@ -39,6 +39,12 @@ const onSubmitUpdatePlant = function (event) {
     .catch(ui.updatePlantFailure)
 }
 
+const onLaunchDeleteModal = function (event) {
+  event.preventDefault()
+  const plantId = event.target.dataset.id
+  $('#confirm-delete').attr('data-id', plantId)
+}
+
 const onDeletePlant = function (event) {
   event.preventDefault()
   const deleteTarget = event.target.dataset.id
@@ -57,7 +63,8 @@ const plantHandlers = function () {
   $(document).on('click', '.index-plants', getAllPlants)
   $(document).on('click', '.edit-button', onLaunchEditModal)
   $(document).on('submit', '.editplant', onSubmitUpdatePlant)
-  $(document).on('click', '.delete-plant', onDeletePlant)
+  $(document).on('click', '.delete-modal-button', onLaunchDeleteModal)
+  $('#confirm-delete').on('click', onDeletePlant)
 }
 
 module.exports = {
