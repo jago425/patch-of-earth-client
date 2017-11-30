@@ -16,9 +16,14 @@ const createPlantFailure = function () {
 }
 
 const getAllPlantsSuccess = function (data) {
-  $('#plant-table-data').empty()
-  const indexPlants = indexPlantsTemplate({ plants: data.plants })
-  $('#plant-table-data').html(indexPlants)
+  if (data.plants.length > 0) {
+    $('#plant-table-data').empty()
+    const indexPlants = indexPlantsTemplate({ plants: data.plants })
+    $('#plant-table-data').html(indexPlants)
+  } else {
+    $('.table').hide()
+    $('#status-message').text("Oh Snapdragon! You don't have any plants saved yet. Click the 'Add' button and get some plants in there!")
+  }
 }
 
 const getAllPlantsFailure = function () {

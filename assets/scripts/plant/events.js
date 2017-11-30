@@ -47,8 +47,13 @@ const onDeletePlant = function (event) {
     .catch(ui.deletePlantFailure)
 }
 
+const resetFormOnCancel = function (event) {
+  $('.plant-input').val('')
+}
+
 const plantHandlers = function () {
   $(document).on('submit', '.add-plant', newPlant)
+  $('#reset').on('click', resetFormOnCancel)
   $(document).on('click', '.index-plants', getAllPlants)
   $(document).on('click', '.edit-button', onLaunchEditModal)
   $(document).on('submit', '.editplant', onSubmitUpdatePlant)
