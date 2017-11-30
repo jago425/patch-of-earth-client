@@ -1,3 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import '~//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css';
+
+.image-buttons {
+  display: inline-block;
+  height: 250px;
+  margin: auto;
+  width: 250px;
+}
