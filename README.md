@@ -3,7 +3,7 @@
 ## About The Application
 Patch of Earth is an application where you can keep an inventory of your plants.  Once you set up an account and login, you can add, edit and delete plants.
 
-![github image](/PatchOfEarth.png)
+![github image](/capstone.png)
 
 ## Links
 
