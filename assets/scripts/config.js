@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://fathomless-lake-16939.herokuapp.com',
+    production: 'https://evening-mountain-89646.herokuapp.com',
     development: 'http://localhost:4741'
   }
 }
