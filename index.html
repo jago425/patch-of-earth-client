@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Patch Of Earth</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      <!-- TOP OF THE PAGE -->
+      <!-- NAV BAR -->
+      <nav data-user class="navbar navbar-light nav-bar hidden" style="background-color: #6E615A;">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a style="color: #E8E4E1;" class="nav-link" href="#change-password-modal" data-toggle="modal"><span class="glyphicon glyphicon-lock"></span> Change Password</a>
+            </li>
+            <li>
+              <a style="color: #E8E4E1;" class="nav-link" id='sign-out' href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+            </li>
+            <br>
+          </ul>
+        </div>
+      </nav>
+  <br>
+      <div class='heading'>
+      <header>
+        <div style='width:100%;' class='clearfix'>
+          <h1 style='float:center;'>Patch of Earth</h1>
+        </div>
+        <h2 id='header-message' class='header-message'></h2>
+      </header>
+    </div>
+
+  <!-- STATUS MESSAGE -->
+  <div id='status-message' class='status'></div>
+  <br>
+  <!--- AUTHENTICATION FORMS -->
+  <!-- Login -->
+  <form id='sign-in' class='auth-form'>
+    <fieldset>
+      <legend>Welcome back! Please login!</legend>
+      <input required type="text" id="login-email" name="credentials[email]" class="nppi text-box" placeholder="username">
+      <input required type="password" id="login-password" name="credentials[password]" class="nppi text-box" placeholder="Password">
+      <input type="submit" name="submit" class="btn btn-primary" value="Login">
+    </fieldset>
+  </form>
+  <br>
+  <br>
+  <!--- Sign Up -->
+  <form id='sign-up' class='auth-form'>
+    <fieldset>
+      <legend>First Time Here? Create an Account</legend>
+      <input required type="text" id="sign-up-email" name="credentials[email]" class="nppi text-box" placeholder="username">
+      <input required type="password" id="sign-up-password" name="credentials[password]" class="nppi text-box" placeholder="Password">
+      <input required type="password" id="confirm-password" name="credentials[password_confirmation]" class="nppi text-box" placeholder="Confirm Password">
+      <input type="submit" name="submit" class="btn btn-primary" value="Sign up!">
+    </fieldset>
+  </form>
+<!-- ADD PLANTS SECTION -->
+  <!-- Add Plant Modal -->
+<div class="modal fade" id="addPlantModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="addPlantLabel">Add Plant</h3>
+      </div>
+      <div class="modal-body">
+        <form id="add-plant-modal" class="add-plant">
+          <div class="modal-message"></div>
+          <label>Plant Type</label>
+          <select required class="plant-input" id="modal-plant-type" name="plant[plant_type]" val='select a type'>
+            <option value="" disabled selected style="display: none;">Please Choose</option>
+            <option value="Flower">Flower</option>
+            <option value="Shrub">Shrub</option>
+            <option value="Fruit">Fruit</option>
+            <option value="Vegetable">Vegetable</option>
+            <option value="Tree">Tree</option>
+            <option value="Succulent">Succulent</option>
+            <option value="Vine">Vine</option>
+            <option value="Other">Other</option>
+          </select>
+        <br>
+       <label>Common Name:</label><input required class="plant-input" type="text" name="plant[common_name]" required size= "75" placeholder="Common Name (required)"><br>
+       <label>Scientific Name:</label><input class="plant-input" type="text" name="plant[scientific_name]" size= "75" placeholder="Scientific Name (optional)"><br>
+       <label>Variety:</label><input class="plant-input" type="text" name="plant[variety]" size= "75" placeholder="Variety (optional)"><br>
+       <label>Brand:</label><input class="plant-input" type="text" name="plant[brand]" size= "75" placeholder="Brand (optional)"><br>
+       <br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-info" id="reset" data-dismiss="modal">Cancel</button>
+          <input type="submit" value="Save Changes" id="add-plant-modal-save" class="btn btn-primary">
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container plants-buttons">
+  <div class="row">
+    <!-- Add Plant Button -->
+    <div class=" container col-xs-12 col-sm-6 add-plant-button">
+      <img src='http://gowith-theblog.com/wp-content/uploads/2017/04/GIF-Baby-GROOT-l%C3%A8ve-les-bras-en-lair.gif' type="button" data-toggle="modal" data-target="#addPlantModal" class="add-plant-button image-buttons">
+        <div class="text">Plant Something!</div>
+      </div>
+    <!-- INDEX PLANTS BUTTON -->
+    <div class="container col-xs-12 col-sm-6" id="see-plants">
+      <img src='https://media.giphy.com/media/3FgJUHCW9nZPq/giphy.gif' class="index-plants image-buttons" id='see-plants'>
+        <div class="text">Sow Me The Plants!</div>
+    </div>
+  </div>
+ </div>
+<!-- PLANTS TABLE-->
+    <section class='plant-table'>
+      <div id='plant-table-data' class='plant-table'></div>
+    </section>
+    <!-- EDIT MODAL-->
+    <div>
+    <div class="modal fade" id="editPlantModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="modal-title" id="editPlantLabel">Edit Plant</h3>
+          </div>
+          <div class="modal-body">
+              <div class="modal-message edit-plant"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- DELETE PLANT MODAL -->
+  <div class="modal fade" id="delete-plant-modal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h3 class="modal-title" id="deleteModalLabel">Are You Sure This is a Good Decision?</h3>
+          </div>
+          <div class="modal-body">
+            <p>If you're sure, click "Delete"</p>
+            <p>If you're unsure, click "Cancel"</p>
+            <img src="https://i.imgur.com/vjeEVFy.jpg" id='groot-button'>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+            <button id='confirm-delete' data-id="" type="button" class="btn btn-primary">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- CHANGE PASSWORD MODAL-->
+      <div id="change-password-modal" class="modal fade" role="dialog" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title" id="changePasswordModalLabel">Change Password</h3>
+            </div>
+            <div class="modal-body">
+              <form id='change-password'>
+                <div class="chg-pw-modal-message"></div>
+                <input required type="password" id="change-password-old" name="passwords[old]" class="nppi text-box" placeholder="Old Password">
+                <input required type="password" id="change-password-new" name="passwords[new]" class="nppi text-box" placeholder="New Password">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
+                <input type="submit" name="submit" class="btn btn-primary" value="Change Password">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
