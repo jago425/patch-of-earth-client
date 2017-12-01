@@ -5,6 +5,18 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .image-buttons {
   display: inline-block;
   height: 250px;
-  margin: auto;
+  margin: auto 80px auto;
   width: 250px;
+  cursor: pointer;
+
+}
+
+.plants-buttons {
+  width: 80%;
+  margin: auto;
+}
+
+.col-xs-12 {
+  margin-bottom: 20px;
+  text-align: center;
 }

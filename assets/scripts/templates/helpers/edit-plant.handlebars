@@ -2,15 +2,9 @@
   <input type="hidden" id='"plant-id-from-edit-modal"' name="plant[id]" value='{{plant.id}}'>
   <label>Plant Type</label>
   <select class="plant-input" id="modal-plant-type" name="plant[plant_type]" val='select a type'>
-    <option value="{{plant.plant_type}}" disabled selected style="display: none;">{{plant.plant_type}}</option>
-    <option value="Flower">Flower</option>
-    <option value="Shrub">Shrub</option>
-    <option value="Fruit">Fruit</option>
-    <option value="Vegetable">Vegetable</option>
-    <option value="Tree">Tree</option>
-    <option value="Succulent">Succulent</option>
-    <option value="Vine">Vine</option>
-    <option value="Other">Other</option>
+    {{#each option as |plant_type|}}
+    <option value="{{plant_type.[0]}}" {{plant_type.[1]}}>{{plant_type.[0]}}</option>
+    {{/each}}
   </select>
 <br>
 <label>Common Name:</label><input required class="plant-input" type="text" name="plant[common_name]" required size= "75" value='{{plant.common_name}}'><br>

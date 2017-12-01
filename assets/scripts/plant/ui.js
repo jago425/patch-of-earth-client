@@ -32,6 +32,18 @@ const getAllPlantsFailure = function () {
 }
 
 const showPlantSuccess = function (data) {
+  // adding a key to the object that Handlebars can access and work with
+  data['option'] = []
+  // create an array of the available options from the dropdown
+  const availableOptions = ['Flower', 'Shrub', 'Fruit', 'Vegetable', 'Tree', 'Succulent', 'Vine', 'Other']
+  // iterate through the availableOptions array and in each iteration, compare the value in the array to the value that was returned from the API.
+  availableOptions.forEach(plant_type => {
+    const selected = plant_type === data.plant.plant_type ? 'selected' : ''
+    // If the value returned from the API matches the value from the array, set the current value from the array as the selected type
+    const option = [plant_type, selected]
+    // and then push the value from the array to the array of available options
+    data['option'].push(option)
+  })
   const showPlant = showEditPlantsTemplate(data)
   $('.edit-plant').html(showPlant)
 }
