@@ -7,6 +7,7 @@ const onPageLoad = function () {
   $('#change-password').hide()
   $('#see-plants').hide()
   $('.add-plant-button').hide()
+  $('.header-message').text('Aloe There!')
 }
 
 const onSignUp = function (event) {

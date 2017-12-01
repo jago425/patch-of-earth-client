@@ -26,6 +26,7 @@ const signInSuccess = function (response, event) {
   $('[data-user]').removeClass('hidden')
   $('#see-plants').show()
   $('.add-plant-button').show()
+  $('.header-message').text('Aloe There!')
 }
 
 const signInFailure = function () {
@@ -56,6 +57,7 @@ const signOutSuccess = function () {
   $('#see-plants').hide()
   $('.add-plant-button').hide()
   $('.table').hide()
+  $('.header-message').text("Don't leaf! Come back!")
   clearStatus()
 }
 

@@ -20,6 +20,7 @@ const getAllPlantsSuccess = function (data) {
     $('#plant-table-data').empty()
     const indexPlants = indexPlantsTemplate({ plants: data.plants })
     $('#plant-table-data').html(indexPlants)
+    $('.header-message').text('Aloe There!')
   } else {
     $('.table').hide()
     $('#status-message').text("Oh Snapdragon! You don't have any plants saved. Click the 'Add' button and get some plants in there!")
