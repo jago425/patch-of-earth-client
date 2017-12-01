@@ -22,7 +22,7 @@ const getAllPlantsSuccess = function (data) {
     $('#plant-table-data').html(indexPlants)
   } else {
     $('.table').hide()
-    $('#status-message').text("Oh Snapdragon! You don't have any plants saved yet. Click the 'Add' button and get some plants in there!")
+    $('#status-message').text("Oh Snapdragon! You don't have any plants saved. Click the 'Add' button and get some plants in there!")
   }
 }
 
