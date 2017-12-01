@@ -26,7 +26,7 @@ const signInSuccess = function (response, event) {
   $('[data-user]').removeClass('hidden')
   $('#see-plants').show()
   $('.add-plant-button').show()
-  $('.header-message').text('Aloe There!')
+  $('.header-message').text("It's about thyme! It feels like sages since you last visited!")
 }
 
 const signInFailure = function () {

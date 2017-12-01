@@ -1,6 +1,49 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import '~//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css';
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+  background-color: #e0cdaf;
+}
+
+.nav {
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 75px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.auth-form {
+  text-align: center;
+  font-weight: bold;
+}
+
+legend {
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.header-message {
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.status {
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  text-align: center;
+  color: #694364;
+}
 
 .image-buttons {
   display: inline-block;
@@ -19,4 +62,60 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .col-xs-12 {
   margin-bottom: 20px;
   text-align: center;
+}
+
+td {
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
+  font-size: 18px;
+}
+
+.table-header {
+  background-color: #6e615a;
+  color: #e8e4e1;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+.btn-primary {
+background-color: #694364;
+font-family: 'Amatic SC', cursive;
+font-weight: bold;
+font-size: 15px;
+}
+
+.btn-info {
+  background-color: #026670;
+  font-family: 'Amatic SC', cursive;
+  font-size: 15px;
+}
+
+.modal-header {
+  background-color: #6e615a;
+  color: #ebe3d9;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.modal-body {
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.text {
+  font-family: 'Amatic SC', cursive;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+#groot-button {
+  display: inline-block;
+  height: 200px;
+  margin: auto 40px auto;
+  width: 230px;
+  float: right;
 }

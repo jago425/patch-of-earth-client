@@ -20,10 +20,10 @@ const getAllPlantsSuccess = function (data) {
     $('#plant-table-data').empty()
     const indexPlants = indexPlantsTemplate({ plants: data.plants })
     $('#plant-table-data').html(indexPlants)
-    $('.header-message').text('Aloe There!')
+    $('.header-message').text("Always Be Plantin'!")
   } else {
     $('.table').hide()
-    $('#status-message').text("Oh Snapdragon! You don't have any plants saved. Click the 'Add' button and get some plants in there!")
+    $('#status-message').text("Oh Snapdragon! You don't have any plants saved. Click the 'Plant Something' Groot and get some plants in here!")
   }
 }
 
@@ -84,7 +84,7 @@ const deletePlantFailure = function () {
 const clearStatus = function () {
   setTimeout(function () {
     $('#status-message').text('')
-  }, 2500)
+  }, 3500)
 }
 
 module.exports = {

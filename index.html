@@ -12,14 +12,14 @@
     <body class="container-fluid">
       <!-- TOP OF THE PAGE -->
       <!-- NAV BAR -->
-      <nav data-user class="navbar navbar-light nav-bar hidden" style="background-color: #e3f2fd;">
+      <nav data-user class="navbar navbar-light nav-bar hidden" style="background-color: #6E615A;">
         <div class="container-fluid">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a class="nav-link" href="#change-password-modal" data-toggle="modal"><span class="glyphicon glyphicon-lock"></span> Change Password</a>
+              <a style="color: #E8E4E1;" class="nav-link" href="#change-password-modal" data-toggle="modal"><span class="glyphicon glyphicon-lock"></span> Change Password</a>
             </li>
             <li>
-              <a class="nav-link" id='sign-out' href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
+              <a style="color: #E8E4E1;" class="nav-link" id='sign-out' href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a>
             </li>
             <br>
           </ul>
@@ -53,7 +53,7 @@
   <!--- Sign Up -->
   <form id='sign-up' class='auth-form'>
     <fieldset>
-      <legend>First time here? You should totally sign up!</legend>
+      <legend>First Time Here? Create an Account</legend>
       <input required type="text" id="sign-up-email" name="credentials[email]" class="nppi text-box" placeholder="username">
       <input required type="password" id="sign-up-password" name="credentials[password]" class="nppi text-box" placeholder="Password">
       <input required type="password" id="confirm-password" name="credentials[password_confirmation]" class="nppi text-box" placeholder="Confirm Password">
@@ -66,7 +66,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addPlantLabel">Add Plant</h5>
+        <h3 class="modal-title" id="addPlantLabel">Add Plant</h3>
       </div>
       <div class="modal-body">
         <form id="add-plant-modal" class="add-plant">
@@ -90,7 +90,7 @@
        <label>Brand:</label><input class="plant-input" type="text" name="plant[brand]" size= "75" placeholder="Brand (optional)"><br>
        <br>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="reset" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-info" id="reset" data-dismiss="modal">Cancel</button>
           <input type="submit" value="Save Changes" id="add-plant-modal-save" class="btn btn-primary">
         </div>
         </form>
@@ -109,7 +109,7 @@
     <!-- INDEX PLANTS BUTTON -->
     <div class="container col-xs-12 col-sm-6" id="see-plants">
       <img src='https://media.giphy.com/media/3FgJUHCW9nZPq/giphy.gif' class="index-plants image-buttons" id='see-plants'>
-        <div class="text">Sow Me My Plants</div>
+        <div class="text">Sow Me The Plants!</div>
     </div>
   </div>
  </div>
@@ -124,7 +124,7 @@
 
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="editPlantLabel">Edit Plant</h5>
+            <h3 class="modal-title" id="editPlantLabel">Edit Plant</h3>
           </div>
           <div class="modal-body">
               <div class="modal-message edit-plant"></div>
@@ -146,6 +146,7 @@
           <div class="modal-body">
             <p>If you're sure, click "Delete"</p>
             <p>If you're unsure, click "Cancel"</p>
+            <img src="Images/groot-push-button.jpg" id='groot-button'>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-info" data-dismiss="modal">Cancel</button>
@@ -159,7 +160,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="changePasswordModalLabel">Change Password</h5>
+              <h3 class="modal-title" id="changePasswordModalLabel">Change Password</h3>
             </div>
             <div class="modal-body">
               <form id='change-password'>
